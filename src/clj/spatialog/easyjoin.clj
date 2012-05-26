@@ -45,11 +45,11 @@
         (double-up ?lat-str ?lon-str :> ?lat ?lon))))
 
 (defn parameterized-join
-  [poly-path points-path]
+  [poly-path points-path intersect-op]
   (let [[iso poly-geom] (first (import-poly poly-path))
-        pts-tap (points-tap points-path) ]
+        pts-tap (points-tap points-path)]
     (<- [?count ?iso]
         (pts-tap ?lat ?lon)
         (add-fields iso :> ?iso)
-        (intersects-env-op [poly-geom] ?lat ?lon)
+        (intersect-op [poly-geom] ?lat ?lon)
         (c-ops/count ?count))))
