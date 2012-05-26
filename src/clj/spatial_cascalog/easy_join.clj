@@ -47,7 +47,7 @@
 
 (defn parameterized-join
   [poly-path points-path]
-  (let [[iso poly-geom] (first (poly-jts poly-path))
+  (let [[iso poly-geom] (first (??- (poly-tap poly-path)))
         pts-tap (points-tap points-path) ]
     (<- [?count ?iso]
         (pts-tap ?lat ?lon)
