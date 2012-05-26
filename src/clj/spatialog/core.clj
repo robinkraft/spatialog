@@ -1,10 +1,8 @@
-(ns spatial-cascalog.core
+(ns spatialog.core
   (:use [cljts.geom :exclude [empty?]]
         [cljts.relation :exclude [contains?]]
         [cljts.io :only (read-wkt-str)]
-        [spatial-cascalog utils]
-        [cascalog.api]
-        [meridian/clj-jts "0.0.1"]
-        )
+        [spatialog.utils]
+        [cascalog.api])
   (:require [cascalog.ops :as c-ops]
             [cascalog.io :as io]))

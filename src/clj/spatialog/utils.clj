@@ -1,4 +1,4 @@
-(ns spatial-cascalog.utils
+(ns spatialog.utils
   "Handy utilities"
   (:use [cljts.geom :exclude [empty?]]
         [cljts.io :only (read-wkt-str)]

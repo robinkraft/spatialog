@@ -1,11 +1,10 @@
-(ns spatial-cascalog.easy-join
+(ns spatialog.easy-join
   "Namespace demonstrating a spatial join of fire detections with country boundaries."
   (:use [cljts.geom :exclude [empty?]]
         [cljts.relation :exclude [contains?]]
         [cljts.io]
-        [spatial-cascalog utils]
         [cascalog.api]
-        [spatial-cascalog.utils])
+        [spatialog.utils])
   (:require [cascalog.ops :as c-ops]
             [cascalog.io :as c-io]))
 
