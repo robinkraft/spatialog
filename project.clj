@@ -1,4 +1,4 @@
-(defproject spatialog/spatialog "0.1.0-SNAPSHOT"
+(defproject net.robinkraft/spatialog "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :repositories {"conjars" "http://conjars.org/repo/"}
   :source-path "src/clj"
