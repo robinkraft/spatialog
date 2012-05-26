@@ -1,4 +1,4 @@
-(defproject cascalog-spatial "0.1.0-SNAPSHOT"
+(defproject spatial-cascalog "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :repositories {"conjars" "http://conjars.org/repo/"}
   :source-path "src/clj"
