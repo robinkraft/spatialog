@@ -24,12 +24,12 @@
   "Standard intersection"
   (intersects? poly (latlon->point lat lon)))
 
-(defn poly-tap
+(defn import-poly
   "Tap reads polygons from csv of WKT strings, returns iso code and
    JTS polygon geometry"
   [polys-path]
   (let [src (hfs-textline polys-path)]
-    (<- [?iso ?poly-geom]
+    (??<- [?iso ?poly-geom]
         (src ?line)
         (split-line ?line #"," 2 :> ?iso ?poly-str)
         (subs ?poly-str 11 :> ?wkt)
@@ -46,7 +46,7 @@
 
 (defn parameterized-join
   [poly-path points-path]
-  (let [[iso poly-geom] (first (??- (poly-tap poly-path)))
+  (let [[iso poly-geom] (first (import-poly poly-path))
         pts-tap (points-tap points-path) ]
     (<- [?count ?iso]
         (pts-tap ?lat ?lon)
